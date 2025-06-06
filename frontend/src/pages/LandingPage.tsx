@@ -50,7 +50,7 @@ const LandingPage = () => {
                             <div className="hidden lg:block">
                                 <img
                                     className="w-full grayscale object-contain max-h-[70vh]"
-                                    src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/1/hero-img.png"
+                                    src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/03/what-is-a-blog-1.webp"
                                     alt="Hero"
                                 />
                             </div>
