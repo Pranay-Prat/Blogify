@@ -3,7 +3,6 @@ import { useState } from "react";
 import type { SignupInput } from "@pranay.pratap15/blogging-common";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline"; 
 import axios from "axios";
-import { BACKEND_URL } from "../config";
 import toast from "react-hot-toast";
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
@@ -16,7 +15,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   async function sendRequest(e: React.FormEvent){
     try {
         e.preventDefault();
-        const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`,postInput)
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`,postInput)
         const jwt = response.data.jwt;
         localStorage.setItem("jwt", jwt);
         localStorage.setItem("name", response.data.name);

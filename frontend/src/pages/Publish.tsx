@@ -3,7 +3,6 @@ import AppBar from "../components/Appbar";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import axios from "axios";
-import { BACKEND_URL } from "../config";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 const Publish = () => {
@@ -62,7 +61,7 @@ const name = localStorage.getItem("name");
             <div className="mt-6">
               <button onClick={async()=>{
                 console.log(content);
-                const response = await axios.post(`${BACKEND_URL}/api/v1/blog`, {
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/blog`, {
                     title,
                     content},{
                     headers: {
